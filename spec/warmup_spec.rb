@@ -8,8 +8,10 @@ describe Warmup do
   describe '#gets_shout' do
     it 'uses shout to get and return a string' do
       allow(warmup).to receive(:gets).and_return("ECHO")
+      expect(warmup.gets_shout).to eq("ECHO")
     end
   end
+
 
   describe '#triple_size' do
     it 'multiply the contents of the array by a factor of 3' do
@@ -21,11 +23,6 @@ describe Warmup do
     it 'tests a string being passed as an arguemnt' do
       expect(warmup.calls_some_methods("string")).to eq("I am unrelated")
     end
-
-    ##
-    #it 'tests no string being passed as an argument' do
-    #  expect(warmup.calls_some_methods()).to raise_argument(ArgumentError)
-    #end
   end
 
 end
